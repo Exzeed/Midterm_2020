@@ -9,7 +9,7 @@ RollButton::RollButton()
 		"rollButton",
 		ROLL_BUTTON, glm::vec2(400.0f, 300.0f)), m_isClicked(false)
 {
-	
+	TheSoundManager::Instance()->load("../Assets/audio/yay.ogg", "sound", SOUND_SFX);
 }
 
 RollButton::~RollButton()
@@ -22,7 +22,7 @@ bool RollButton::ButtonClick()
 	{
 		if(!m_isClicked)
 		{
-			//Game::Instance()->changeSceneState(LEVEL1_SCENE);
+			TheSoundManager::Instance()->playSound("sound", 0);
 			std::cout<<"Roll"<<std::endl;
 			RollButton::Rolls();
 			m_isClicked = true;

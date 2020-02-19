@@ -58,7 +58,7 @@ void Level1Scene::handleEvents()
 			case SDL_BUTTON_LEFT:
 				m_pRollButton->setMouseButtonClicked(true);
 				//m_pDiceLabel1->setText("2");
-				std::string d1= RollButton::diceValue[0];
+				//std::string d1= RollButton::diceValue[0];
 				//m_pDiceLabel1->setText(RollButton::diceValue[0]);
 				break;
 			}
