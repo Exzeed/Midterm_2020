@@ -16,6 +16,9 @@ void Level1Scene::draw()
 	m_pRollButton->draw();
 	m_pDice1->draw();
 	m_pDice2->draw();
+
+	m_pDiceLabel1->draw();
+	m_pDiceLabel2->draw();
 }
 
 void Level1Scene::update()
@@ -23,6 +26,8 @@ void Level1Scene::update()
 	m_pRollButton->setMousePosition(m_mousePosition);
 	m_pRollButton->ButtonClick();
 
+	/*m_pDiceLabel1->update();
+	m_pDiceLabel2->update();*/
 }
 
 void Level1Scene::clean()
@@ -125,6 +130,17 @@ void Level1Scene::handleEvents()
 
 void Level1Scene::start()
 {
+	SDL_Color black = { 0, 0, 0, 255 };
+	m_pDiceLabel1 = new Label("0", "Consolas", 36, black, 
+		glm::vec2(Config::SCREEN_WIDTH * 0.3f, Config::SCREEN_HEIGHT * 0.65f));
+	m_pDiceLabel1->setParent(this);
+	addChild(m_pDiceLabel1);
+
+	m_pDiceLabel2 = new Label("0", "Consolas", 36, black, 
+		glm::vec2(Config::SCREEN_WIDTH * 0.7f, Config::SCREEN_HEIGHT * 0.65f));
+	m_pDiceLabel2->setParent(this);
+	addChild(m_pDiceLabel2);
+	
 	m_pRollButton = new RollButton();
 	m_pRollButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.8f));
 	addChild(m_pRollButton);
@@ -136,6 +152,7 @@ void Level1Scene::start()
 	m_pDice2= new Dice();
 	m_pDice2->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.7, Config::SCREEN_HEIGHT * 0.4f));
 	addChild(m_pDice2);
+	
 }
 
 glm::vec2 Level1Scene::getMousePosition()
