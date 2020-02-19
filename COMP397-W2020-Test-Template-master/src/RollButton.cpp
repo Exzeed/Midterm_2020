@@ -39,13 +39,14 @@ bool RollButton::ButtonClick()
 
 std::vector<std::string> RollButton::Rolls()
 {
-	diceValue= {" ", " "};
 	int outcome[]= {0,0,0};
 
-	for(int roll= 0; roll<2; roll++)
-	{
-		outcome[roll]= Util::RandomRange(1,6);
-		std::cout<<"Dice "<<roll+1<< ": "<<outcome[roll] << std::endl;
+	diceV1= Util::RandomRange(1,6);
+	diceV2= Util::RandomRange(1,6);
+
+	/*for(int roll= 0; roll<2; roll++)
+	{*/
+		/*td::cout<<"Dice "<<roll+1<< ": "<<outcome[roll] << std::endl;
 
 		switch(outcome[roll])
 		{
@@ -67,8 +68,9 @@ std::vector<std::string> RollButton::Rolls()
 		case 6:
 			diceValue[roll]= "6";
 			break;
-		}
-	}
+		}*/
+	//}
 	std::cout<<"Values: "<<diceValue[0]<< " "<<diceValue[1]<<std::endl;
+	//diceV1=dice
 	return diceValue;
 }

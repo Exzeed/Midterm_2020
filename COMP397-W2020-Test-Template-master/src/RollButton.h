@@ -13,7 +13,9 @@ public:
 	bool ButtonClick() override;
 	std::vector<std::string>Rolls();
 
-	/*static*/std::vector<std::string> diceValue;
+	/*string*/std::vector<std::string> diceValue;
+	int diceV1;
+	int diceV2;
 	
 private:
 	bool m_isClicked;

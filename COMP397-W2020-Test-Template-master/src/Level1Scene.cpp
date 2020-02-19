@@ -19,15 +19,17 @@ void Level1Scene::draw()
 
 	m_pDiceLabel1->draw();
 	m_pDiceLabel2->draw();
+	//m_pBackground->draw();
 }
 
 void Level1Scene::update()
 {
 	m_pRollButton->setMousePosition(m_mousePosition);
-	m_pRollButton->ButtonClick();
-
-	/*m_pDiceLabel1->update();
-	m_pDiceLabel2->update();*/
+	if(m_pRollButton->ButtonClick())
+	{
+		m_pDiceLabel1->setText(std::to_string(m_pRollButton->diceV1));
+		m_pDiceLabel2->setText(std::to_string(m_pRollButton->diceV2));
+	}
 }
 
 void Level1Scene::clean()

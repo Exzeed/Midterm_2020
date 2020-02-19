@@ -31,10 +31,6 @@ void Dice::draw()
 
 void Dice::update()
 {
-	//std::string 
-	/*TheTextureManager::Instance()->load("../Assets/textures/question_mark.png",
-		"reel", TheGame::Instance()->getRenderer());*/
-	
 }
 
 void Dice::clean()
